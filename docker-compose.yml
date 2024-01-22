@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: ${DB_IMAGE}
+    env_file:
+      - ./.env
+    volumes:
+      - ./.var/postgresql:/var/lib/postgresql/data
+    ports:
+      - ${DATABASE_PORT}
